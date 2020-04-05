@@ -1,24 +1,274 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13122.16" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="15705" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="jKc-A1-kam">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13104.12"/>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="15706"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
+    <customFonts key="customFonts">
+        <array key="Oswald-Light.ttf">
+            <string>Oswald-Light</string>
+        </array>
+        <array key="Oswald-Medium.ttf">
+            <string>Oswald-Medium</string>
+        </array>
+        <array key="Oswald-Regular.ttf">
+            <string>Oswald-Regular</string>
+        </array>
+    </customFonts>
     <scenes>
         <!--View Controller-->
         <scene sceneID="tne-QT-ifu">
             <objects>
-                <viewController id="BYZ-38-t0r" customClass="ViewController" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="BUBusTracker" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <color key="backgroundColor" xcode11CocoaTouchSystemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <subviews>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="P8v-uF-Qid" customClass="GMSMapView">
+                                <rect key="frame" x="0.0" y="173" width="414" height="723"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                            </view>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Bus Tracker" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="bAB-uP-MUU">
+                                <rect key="frame" x="114" y="94" width="186" height="33"/>
+                                <fontDescription key="fontDescription" name="Oswald-Medium" family="Oswald" pointSize="24"/>
+                                <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="lLR-uf-Zhh">
+                                <rect key="frame" x="320" y="92" width="74" height="37"/>
+                                <fontDescription key="fontDescription" name="Oswald-Light" family="Oswald" pointSize="18"/>
+                                <state key="normal" title="Reset View">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                </state>
+                                <connections>
+                                    <action selector="resetView:" destination="BYZ-38-t0r" eventType="touchUpInside" id="SmG-Xm-ZfB"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="kRo-7C-RUS">
+                                <rect key="frame" x="20" y="128" width="62" height="37"/>
+                                <fontDescription key="fontDescription" name="Oswald-Light" family="Oswald" pointSize="18"/>
+                                <state key="normal" title="CRC/MED">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                </state>
+                                <connections>
+                                    <action selector="resetView:" destination="BYZ-38-t0r" eventType="touchUpInside" id="rZf-j7-VO5"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="VcC-iX-O6m">
+                                <rect key="frame" x="90" y="128" width="72" height="37"/>
+                                <fontDescription key="fontDescription" name="Oswald-Light" family="Oswald" pointSize="18"/>
+                                <state key="normal" title="Comm Loop">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                </state>
+                                <connections>
+                                    <action selector="resetView:" destination="BYZ-38-t0r" eventType="touchUpInside" id="tLv-Gv-1RF"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="lLR-uf-Zhh" secondAttribute="trailing" constant="20" id="1fY-bg-Ffm"/>
+                            <constraint firstItem="P8v-uF-Qid" firstAttribute="top" secondItem="bAB-uP-MUU" secondAttribute="bottom" constant="46" id="7HG-0f-6UA"/>
+                            <constraint firstItem="VcC-iX-O6m" firstAttribute="leading" secondItem="kRo-7C-RUS" secondAttribute="trailing" constant="8" id="H0b-7u-mbn"/>
+                            <constraint firstItem="P8v-uF-Qid" firstAttribute="top" secondItem="kRo-7C-RUS" secondAttribute="bottom" constant="8" id="JYF-oM-q6V"/>
+                            <constraint firstItem="P8v-uF-Qid" firstAttribute="centerX" secondItem="bAB-uP-MUU" secondAttribute="centerX" id="OWi-kh-cQh"/>
+                            <constraint firstItem="bAB-uP-MUU" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="114" id="a4F-K0-222"/>
+                            <constraint firstItem="P8v-uF-Qid" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="b3e-nd-OTy"/>
+                            <constraint firstItem="kRo-7C-RUS" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="20" id="dVG-8E-zp6"/>
+                            <constraint firstItem="bAB-uP-MUU" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="6" id="eNS-zo-xvX"/>
+                            <constraint firstItem="lLR-uf-Zhh" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="4" id="efM-nb-1lA"/>
+                            <constraint firstAttribute="bottomMargin" secondItem="P8v-uF-Qid" secondAttribute="bottom" constant="-34" id="grR-Cl-0vo"/>
+                            <constraint firstItem="P8v-uF-Qid" firstAttribute="top" secondItem="VcC-iX-O6m" secondAttribute="bottom" constant="8" id="i4n-cX-g4c"/>
+                            <constraint firstItem="bAB-uP-MUU" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="iBP-OP-Am2"/>
+                            <constraint firstItem="lLR-uf-Zhh" firstAttribute="leading" secondItem="bAB-uP-MUU" secondAttribute="trailing" constant="20" id="ycP-NL-FdT"/>
+                        </constraints>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
+                    <navigationItem key="navigationItem" id="k4e-9S-d28"/>
+                    <connections>
+                        <outlet property="labelView" destination="bAB-uP-MUU" id="9nd-gk-P8S"/>
+                        <outlet property="mapViewAlt" destination="P8v-uF-Qid" id="lEO-pa-v2L"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
+            <point key="canvasLocation" x="823.1884057971015" y="252.45535714285714"/>
+        </scene>
+        <!--Closest View Controller-->
+        <scene sceneID="o9B-aI-658">
+            <objects>
+                <viewController id="5cU-fB-giV" customClass="ClosestViewController" customModule="BUBusTracker" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="19I-RW-a7R">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Next Departure Toward West" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Zre-Tg-n7Z">
+                                <rect key="frame" x="12" y="92" width="390" height="33"/>
+                                <fontDescription key="fontDescription" name="Oswald-Regular" family="Oswald Regular" pointSize="24"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Next Departure Toward East" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="yLD-YH-O6Y">
+                                <rect key="frame" x="86.5" y="398" width="241.5" height="33"/>
+                                <fontDescription key="fontDescription" name="Oswald-Regular" family="Oswald Regular" pointSize="24"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label hidden="YES" opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Stop 1" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Qer-Qs-39s">
+                                <rect key="frame" x="12" y="132" width="390" height="33"/>
+                                <fontDescription key="fontDescription" name="Oswald-Light" family="Oswald" pointSize="24"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="boolean" keyPath="isSkeletonable" value="YES"/>
+                                </userDefinedRuntimeAttributes>
+                            </label>
+                            <label hidden="YES" opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Stop 2" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ffu-QN-a1e">
+                                <rect key="frame" x="20" y="439" width="374" height="33"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="33" id="A8f-a0-eql"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" name="Oswald-Light" family="Oswald" pointSize="24"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="boolean" keyPath="isSkeletonable" value="YES"/>
+                                </userDefinedRuntimeAttributes>
+                            </label>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="H4C-lL-KdD" customClass="GMSMapView">
+                                <rect key="frame" x="50" y="214" width="314" height="144"/>
+                                <color key="backgroundColor" systemColor="systemGreenColor" red="0.20392156859999999" green="0.78039215689999997" blue="0.34901960780000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="144" id="az1-lm-mRz"/>
+                                </constraints>
+                            </view>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="sMs-Sx-Sbe" customClass="GMSMapView">
+                                <rect key="frame" x="50" y="521" width="314" height="144"/>
+                                <color key="backgroundColor" systemColor="systemGreenColor" red="0.20392156859999999" green="0.78039215689999997" blue="0.34901960780000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="144" id="UgH-bs-Tqu"/>
+                                </constraints>
+                            </view>
+                            <label hidden="YES" opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Stop 2" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="2MD-9n-bDE">
+                                <rect key="frame" x="12" y="480" width="390" height="33"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="33" id="idV-wZ-P41"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" name="Oswald-Light" family="Oswald" pointSize="24"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="boolean" keyPath="isSkeletonable" value="YES"/>
+                                </userDefinedRuntimeAttributes>
+                            </label>
+                            <label hidden="YES" opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Stop 2" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="nTu-QC-T0J">
+                                <rect key="frame" x="12" y="173" width="390" height="33"/>
+                                <fontDescription key="fontDescription" name="Oswald-Light" family="Oswald" pointSize="24"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="boolean" keyPath="isSkeletonable" value="YES"/>
+                                </userDefinedRuntimeAttributes>
+                            </label>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="JgH-t0-n8n" customClass="NVActivityIndicatorView" customModule="NVActivityIndicatorView">
+                                <rect key="frame" x="187" y="133" width="40" height="40"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="40" id="JMf-MO-ULU"/>
+                                    <constraint firstAttribute="width" constant="40" id="iKc-sq-rVu"/>
+                                </constraints>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="string" keyPath="typeName" value="circleStrokeSpin"/>
+                                    <userDefinedRuntimeAttribute type="color" keyPath="color">
+                                        <color key="value" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
+                            </view>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="b8E-pw-ZaJ" customClass="NVActivityIndicatorView" customModule="NVActivityIndicatorView">
+                                <rect key="frame" x="187" y="439" width="40" height="40"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="40" id="Guw-QD-Eqm"/>
+                                    <constraint firstAttribute="width" constant="40" id="Mcu-Lt-Rgl"/>
+                                </constraints>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="color" keyPath="color">
+                                        <color key="value" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="string" keyPath="typeName" value="circleStrokeSpin"/>
+                                </userDefinedRuntimeAttributes>
+                            </view>
+                        </subviews>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <constraints>
+                            <constraint firstItem="ffu-QN-a1e" firstAttribute="top" secondItem="yLD-YH-O6Y" secondAttribute="bottom" constant="8" id="1Fh-ad-8ZD"/>
+                            <constraint firstItem="sMs-Sx-Sbe" firstAttribute="leading" secondItem="T4Z-rD-q0F" secondAttribute="leading" constant="50" id="1aa-XX-piS"/>
+                            <constraint firstItem="ffu-QN-a1e" firstAttribute="leading" secondItem="T4Z-rD-q0F" secondAttribute="leading" constant="20" id="27j-DP-BOb"/>
+                            <constraint firstItem="Zre-Tg-n7Z" firstAttribute="leading" secondItem="T4Z-rD-q0F" secondAttribute="leading" constant="12" id="2oE-5b-f7c"/>
+                            <constraint firstItem="JgH-t0-n8n" firstAttribute="centerX" secondItem="T4Z-rD-q0F" secondAttribute="centerX" id="4br-tv-KA4"/>
+                            <constraint firstItem="T4Z-rD-q0F" firstAttribute="trailing" secondItem="H4C-lL-KdD" secondAttribute="trailing" constant="50" id="Bgf-4T-fvS"/>
+                            <constraint firstItem="Qer-Qs-39s" firstAttribute="leading" secondItem="T4Z-rD-q0F" secondAttribute="leading" constant="12" id="CbJ-zb-AQX"/>
+                            <constraint firstItem="Zre-Tg-n7Z" firstAttribute="top" secondItem="T4Z-rD-q0F" secondAttribute="top" constant="48" id="DOp-9V-6z2"/>
+                            <constraint firstItem="H4C-lL-KdD" firstAttribute="top" secondItem="nTu-QC-T0J" secondAttribute="bottom" constant="8" id="EAx-MW-5eu"/>
+                            <constraint firstItem="sMs-Sx-Sbe" firstAttribute="centerX" secondItem="T4Z-rD-q0F" secondAttribute="centerX" id="EGN-ov-fdi"/>
+                            <constraint firstItem="2MD-9n-bDE" firstAttribute="centerX" secondItem="T4Z-rD-q0F" secondAttribute="centerX" id="FAG-Uc-Ro2"/>
+                            <constraint firstItem="nTu-QC-T0J" firstAttribute="top" secondItem="Qer-Qs-39s" secondAttribute="bottom" constant="8" id="FUA-Kd-CaH"/>
+                            <constraint firstItem="sMs-Sx-Sbe" firstAttribute="top" secondItem="2MD-9n-bDE" secondAttribute="bottom" constant="8" id="Jvg-lr-Low"/>
+                            <constraint firstItem="H4C-lL-KdD" firstAttribute="leading" secondItem="T4Z-rD-q0F" secondAttribute="leading" constant="50" id="OZE-zd-PGX"/>
+                            <constraint firstItem="T4Z-rD-q0F" firstAttribute="trailing" secondItem="nTu-QC-T0J" secondAttribute="trailing" constant="12" id="Pmz-6v-mls"/>
+                            <constraint firstItem="yLD-YH-O6Y" firstAttribute="top" secondItem="H4C-lL-KdD" secondAttribute="bottom" constant="40" id="UDG-zP-0OP"/>
+                            <constraint firstItem="T4Z-rD-q0F" firstAttribute="trailing" secondItem="2MD-9n-bDE" secondAttribute="trailing" constant="12" id="b5I-Li-i01"/>
+                            <constraint firstItem="2MD-9n-bDE" firstAttribute="top" secondItem="ffu-QN-a1e" secondAttribute="bottom" constant="8" id="gDk-cF-rHq"/>
+                            <constraint firstItem="b8E-pw-ZaJ" firstAttribute="top" secondItem="yLD-YH-O6Y" secondAttribute="bottom" constant="8" id="hbD-xy-2Tg"/>
+                            <constraint firstItem="b8E-pw-ZaJ" firstAttribute="centerX" secondItem="T4Z-rD-q0F" secondAttribute="centerX" id="in6-Uk-QcB"/>
+                            <constraint firstItem="ffu-QN-a1e" firstAttribute="centerX" secondItem="T4Z-rD-q0F" secondAttribute="centerX" id="j0R-AD-Wza"/>
+                            <constraint firstItem="nTu-QC-T0J" firstAttribute="leading" secondItem="T4Z-rD-q0F" secondAttribute="leading" constant="12" id="mJX-P4-XA7"/>
+                            <constraint firstItem="yLD-YH-O6Y" firstAttribute="centerX" secondItem="T4Z-rD-q0F" secondAttribute="centerX" id="tcP-hV-cPO"/>
+                            <constraint firstItem="JgH-t0-n8n" firstAttribute="top" secondItem="Zre-Tg-n7Z" secondAttribute="bottom" constant="8" id="vj0-SQ-9Dz"/>
+                            <constraint firstItem="T4Z-rD-q0F" firstAttribute="trailing" secondItem="Qer-Qs-39s" secondAttribute="trailing" constant="12" id="wjM-OG-Cwn"/>
+                            <constraint firstItem="T4Z-rD-q0F" firstAttribute="trailing" secondItem="sMs-Sx-Sbe" secondAttribute="trailing" constant="50" id="y3a-VY-nZX"/>
+                            <constraint firstItem="Qer-Qs-39s" firstAttribute="top" secondItem="Zre-Tg-n7Z" secondAttribute="bottom" constant="7" id="zPz-W2-Q4f"/>
+                            <constraint firstItem="Zre-Tg-n7Z" firstAttribute="centerX" secondItem="T4Z-rD-q0F" secondAttribute="centerX" id="zV1-ry-pz3"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="T4Z-rD-q0F"/>
+                    </view>
+                    <navigationItem key="navigationItem" id="y6X-37-DAd"/>
+                    <connections>
+                        <outlet property="loading1" destination="JgH-t0-n8n" id="Ww5-rC-qED"/>
+                        <outlet property="loading2" destination="b8E-pw-ZaJ" id="ipU-z5-EOW"/>
+                        <outlet property="mapView1" destination="H4C-lL-KdD" id="71x-Zg-nqD"/>
+                        <outlet property="mapView2" destination="sMs-Sx-Sbe" id="Fhw-qo-m8M"/>
+                        <outlet property="stop1" destination="Qer-Qs-39s" id="vTl-W7-EY0"/>
+                        <outlet property="stop1Name" destination="nTu-QC-T0J" id="0D4-yF-ju9"/>
+                        <outlet property="stop2" destination="ffu-QN-a1e" id="Z2U-xn-SRq"/>
+                        <outlet property="stop2Name" destination="2MD-9n-bDE" id="1NK-o0-HxU"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="29a-hB-WBO" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1800.0000000000002" y="137.94642857142856"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="nBx-IJ-1Fn">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="jKc-A1-kam" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <navigationItem key="navigationItem" id="tma-s7-mbr"/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="s10-aN-6RW">
+                        <rect key="frame" x="0.0" y="44" width="414" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="BYZ-38-t0r" kind="relationship" relationship="rootViewController" id="oTD-yY-emV"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="srU-jj-4Tr" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-86.956521739130437" y="252.45535714285714"/>
         </scene>
     </scenes>
 </document>
