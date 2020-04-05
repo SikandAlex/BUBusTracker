@@ -1,7 +1,9 @@
 # Boston University BusTracker
 iOS application that allows users to view Boston University bus locations and schedules.
 
-![]()
+Unfortunately no screen shots because Boston University bus service has been suspended due to COVID-19. 
+
+I'm hoping that other student's might find this repository and contribute to it. I have implemented the Codable property to make decoding from the live bus JSON response easy in Swift!
 
 ## Installation
 
