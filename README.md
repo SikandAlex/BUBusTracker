@@ -14,7 +14,3 @@ You must be using a Mac with Xcode installed.
 3) Open BUBusTracker.xcworkspace
 
 Build and run the app on the iOS simulator or connect your iPhone and install directly to your physical device.
-
-## APIs and External Libraries
-
-## Breakdown
